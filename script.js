@@ -1,9 +1,9 @@
 const results = document.querySelector("#results");
 
 function calc(){
-    let userDate = document.querySelector("#dd").value;
-    let userMonth = document.querySelector("#mm").value;
-    let userYear = document.querySelector("#yy").value;
+    let userDate = Number(document.querySelector("#dd").value);
+    let userMonth = Number(document.querySelector("#mm").value);
+    let userYear = Number(document.querySelector("#yy").value);
 
     let dateObj = new Date();
 
@@ -35,6 +35,10 @@ function calc(){
 
     if(userYear <= 1800){
         results.innerHTML = `${calculatedYear} year(s), ${calculatedMonth} month(s) and ${calculatedDate} day(s) old <br> How are you still alive!?`;
+    }
+
+    if(userDate === currentDate && userMonth === currentMonth && userYear === currentYear){
+        results.innerHTML = "You're Today's years old"
     }
 
     }else {
